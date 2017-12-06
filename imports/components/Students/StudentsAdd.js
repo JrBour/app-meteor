@@ -25,10 +25,12 @@ class StudentsAdd extends Component {
     StudentCollection.insert({
       name: this.state.name,
       createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
     });
     this.setState({
       name: ''
-    })
+    });
     return (
       <Redirect to="/students"/>
     )
