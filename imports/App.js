@@ -9,8 +9,6 @@ import {
 
 import createBrowserHistory from 'history/createBrowserHistory';
 
-import { StudentCollection } from './api/StudentCollection.js';
-
 // Shared Component
 import Home from './components/Home';
 import StudentsList from './components/Students/StudentsList';
