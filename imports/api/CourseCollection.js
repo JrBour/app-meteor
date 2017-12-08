@@ -6,8 +6,8 @@ export const CourseCollection = new Mongo.Collection('courses');
 
 CourseCollection.allow({
   insert() { return true; },
-  // update() { return true; },
-   remove() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
 if( Meteor.isServer )
@@ -21,17 +21,17 @@ if( Meteor.isServer )
         createdAt: new Date(),
       });
     },
-    'courses.remove'(studentId) {
-       check(studentId, String);
+    'courses.remove'(courseId) {
+       check(courseId, String);
    
-       CourseCollection.remove(studentId);
+       CourseCollection.remove(courseId);
      },
-    // 'tasks.setChecked'(taskId, setChecked) {
-    //   check(taskId, String);
-    //   check(setChecked, Boolean);
+    'courses.update'(courseId, name) {
+      check(courseId, String);
+      check(name, String);
    
-    //   StudentCollection.update(taskId, { $set: { checked: setChecked } });
-    // },
+      CourseCollection.update(courseId, { $set: { name: name } });
+    },
   });
 
   Meteor.publish(

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { StudentCollection } from '../../api/StudentCollection.js';
 
 export default class Student extends Component {
@@ -8,12 +9,12 @@ export default class Student extends Component {
   }
   render() {
     return (
-      <li className="taskClassName">
-        <button className="delete" onClick={this.deleteThisStudent.bind(this)}>
-          &times;
-        </button>
-        <span className="text">{this.props.eleveFirstName} {this.props.eleveName}</span>
-      </li>
+        <li className="taskClassName">
+          <button className="delete" onClick={this.deleteThisStudent.bind(this)}>
+            &times;
+          </button>
+          <Link to={'/students/edit/' + this.props.eleve}><span className="text">{this.props.eleveFirstName} {this.props.eleveName}</span></Link>
+        </li>
     )
   }
 }

@@ -13,8 +13,9 @@ class Home extends Component {
         <h1>Hetic Classroom</h1>
 
         <AccountsUIWrapper />
-        <Link to={'/students'}>Students</Link>
+        <Link to={'/students'}>Etudiants</Link>
         <Link to={'/courses'}>Courses</Link>
+        <Link to={'/classes'}>Classes</Link>
       </div>
     );
   }
