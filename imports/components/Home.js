@@ -2,59 +2,60 @@ import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor'
 
-import AccountsUIWrapper from '../ui/AccountUiWrapper';
 
 // Install
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      renderPost: false,
+      userN: null
+    }
+  }
+
   logout = () => {
     Meteor.logout((error) => {
       if (error) return console.log("there was an error: " + error);
     })
   };
 
-  renderLogout = () => {
-    if (this.props.user) {
-      return <button onClick={this.logout}>Logout</button>
-    }
-  };
-
-  renderLogin = () => {
-    if (!this.props.user) {
-      return (
-        <div>
-          <div className="linkBlock">
-            <Link to={'/login'}>Login</Link>
-          </div>
-          <div className="linkBlock">
-            <Link to={'/register'}>Register</Link>
-          </div>
-        </div>
-      )
-    }
-  };
-
   render() {
     return (
       <div className="home">
         <h1>Hetic Classroom</h1>
-        <p>{this.props.user ? this.props.user.username : ''}</p>
-        {this.renderLogout()}
-        {this.renderLogin()}
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <Link to={'/students'}>Etudiants</Link>
-            </div>
-            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <Link to={'/courses'}>Courses</Link>
-            </div>
-            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <Link to={'/classes'}>Classes</Link>
-            </div>
+        <nav className="navbar navbar-inverse">
+          <div className="container-fluid">
+            <ul className="nav navbar-nav">
+              <li>
+                <p>{this.props.user ? this.props.user.username : ''}</p>
+              </li>
+              <li>
+                <button onClick={this.logout}>Logout</button>
+              </li>
+            </ul>
+            <ul className="nav navbar-nav">
+              <li>
+                <Link to={'/login'}>Login</Link>
+              </li>
+              <li>
+                <Link to={'/register'}>Register</Link>
+              </li>
+            </ul>
+            <ul className="nav navbar-nav navbar-right">
+              <li>
+                <Link to={'/students'}>Etudiants</Link>
+              </li>
+              <li>
+                <Link to={'/courses'}>Courses</Link>
+              </li>
+              <li>
+                <Link to={'/classes'}>Classes</Link>
+              </li>
+            </ul>
           </div>
-        </div>
+        </nav>
       </div>
     );
   }
