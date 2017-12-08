@@ -13,7 +13,7 @@ CourseCollection.allow({
 if( Meteor.isServer )
 {
   Meteor.methods({
-    'course.insert'(name) {
+    'courses.insert'(name) {
       check(name, String);
       
       CourseCollection.insert({
@@ -35,10 +35,10 @@ if( Meteor.isServer )
   });
 
   Meteor.publish(
-                  "courses.all"
-                  ,() =>
-                  {
-                    return CourseCollection.find();
-                  }
-                );
+    "courses.all"
+    ,() =>
+    {
+      return CourseCollection.find();
+    }
+  );
 }

@@ -12,7 +12,7 @@ StudentCollection.allow({
 if( Meteor.isServer )
 {
   Meteor.methods({
-    'students.insert'(firstname, name) {
+    'students.insert'(firstName, name) {
       check(firstName, String);
       check(name, String);
       

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { withTracker } from 'meteor/react-meteor-data';
-
 import { Link } from 'react-router-dom'
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import Courses from './Courses.js';
 
 // Collections
 import { CourseCollection } from '../../api/CourseCollection.js';
-
-console.log(CourseCollection);
+import { link } from 'fs';
 
 class CoursesList extends Component {
   constructor(props) {
@@ -15,14 +15,10 @@ class CoursesList extends Component {
       value: ''
     }
   }
-  renderCourses = () => {
-    return this.props.courses.map((course) => {
-      console.log('course : ', course.name);
-      return <li key={course._id}>{course.name}</li>
-    })
-  };
-  componentDidMount(){
-    console.log(this.props.courses);
+  renderCourses(){
+    return this.props.courses.map((course) => (
+      <Courses key={course._id} course={course._id} courseName={course.name} />
+    ))
   }
   render() {
     return (
@@ -31,8 +27,8 @@ class CoursesList extends Component {
         <ul>
           {this.renderCourses()}
         </ul>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/courses/add'}>Add</Link>
+        <Link to={'/'}>Accueil</Link>
+        <Link to={'/courses/add'}>Ajouter</Link>
       </div>
     );
   }

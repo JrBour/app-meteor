@@ -12,7 +12,7 @@ export default class Student extends Component {
         <button className="delete" onClick={this.deleteThisStudent.bind(this)}>
           &times;
         </button>
-        <span className="text">{this.props.eleveName}</span>
+        <span className="text">{this.props.eleveFirstName} {this.props.eleveName}</span>
       </li>
     )
   }

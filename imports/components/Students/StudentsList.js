@@ -16,9 +16,8 @@ class StudentsList extends Component {
     }
   }
   renderStudent(){
-    console.log('this.props.students : ', this.props.students);
     return this.props.students.map((student) => (
-      <Student key={student._id} eleve={student._id} eleveName={student.name} />
+      <Student key={student._id} eleve={student._id} eleveName={student.name} eleveFirstName={student.firstName} />
     ));
   }
 
@@ -29,7 +28,8 @@ class StudentsList extends Component {
         <ul>
           {this.renderStudent()}
         </ul>
-        <Link to={'/students/add'}>Add</Link>
+        <Link to={'/'}>Accueil</Link>
+        <Link to={'/students/add'}>Ajouter</Link>
       </div>
     );
   }
