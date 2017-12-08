@@ -15,6 +15,7 @@ class Home extends Component {
 
         <AccountsUIWrapper />
         <Link to={'/students'}>Students</Link>
+        <Link to={'/courses'}>Courses</Link>
       </div>
     );
   }

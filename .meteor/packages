@@ -19,5 +19,8 @@ shell-server@0.3.0            # Server-side component of the `meteor shell` comm
 
 react-meteor-data
 bootstrap
+aldeed:simple-schema
+audit-argument-checks
+mdg:validated-method
 accounts-ui
 accounts-password
