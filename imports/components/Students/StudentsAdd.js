@@ -31,7 +31,7 @@ class StudentsAdd extends Component {
     this.setState({
       firstName: '',
       name: ''
-    })
+    });
     return (
       <Redirect to="/students"/>
     )

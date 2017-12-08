@@ -22,3 +22,5 @@ bootstrap
 aldeed:simple-schema
 audit-argument-checks
 mdg:validated-method
+accounts-ui
+accounts-password
