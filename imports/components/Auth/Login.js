@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter } from 'react-router'
 
-import { Accounts } from 'meteor/accounts-base'
+import { Meteor } from 'meteor/meteor'
 
 // Install
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
   constructor(props) {
@@ -27,26 +29,21 @@ class Login extends Component {
     })
   };
 
-  handleSubmit = () => {
-    Accounts.createUser(
-      {
-        username: this.state.username,
-        password: this.state.password
-      },
-      function(error) {
-        if (error) {
-          console.log("there was an error: " + error.reason);
-        } else {
-          return <Redirect to="/register" push />
-        };
-      }
-    );
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const userName = this.state.username;
+    const password = this.state.password;
+
+    Meteor.loginWithPassword(userName, password, (error) => {
+      if(error) return console.log("there was an error: " + error);
+      return this.props.history.push('/')
+    });
   };
 
   render() {
     return (
       <div className="home">
-        <h1>Register</h1>
+        <h1>Login</h1>
         <form action="" onSubmit={this.handleSubmit}>
           <div className="field">
             <label htmlFor="username">Username</label>
@@ -58,9 +55,10 @@ class Login extends Component {
           </div>
           <input type="submit" value="Submit"/>
         </form>
+        <Link to="/">Retourner sur la page d'accueil</Link>
       </div>
     );
   }
 }
 
-export default Login
+export default withRouter(Login)

@@ -16,6 +16,7 @@ import StudentsAdd from './components/Students/StudentsAdd';
 import CoursesList from './components/Courses/CoursesList';
 import CoursesAdd from './components/Courses/CoursesAdd';
 import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route exact path="/courses" component={CoursesList}/>
           <Route exact path="/courses/add" component={CoursesAdd}/>
           <Route exact path="/register" component={Register}/>
+          <Route exact path="/login" component={Login}/>
         </div>
       </Router>
     );
