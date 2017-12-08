@@ -6,7 +6,6 @@ import Student from './Students.js';
 
 // Collections
 import { StudentCollection } from '../../api/StudentCollection.js';
-import { link } from 'fs';
 
 class StudentsList extends Component {
   constructor(props) {

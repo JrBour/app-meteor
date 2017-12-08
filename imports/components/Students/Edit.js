@@ -28,14 +28,14 @@ export default class Edit extends Component {
   render() {
     return (
       <form onSubmit={this.handleSumbit.bind(this) }>
-      <div className="inputField">
-          <label htmlFor="input">Prénom :</label>
-          <input type="text" id="input" value={this.state.firstName} onChange={this.handleChangeFirstName} required/>
-          <label htmlFor="input">Name :</label>
-          <input type="text" id="input" value={this.state.name} onChange={this.handleChangeName} required/>
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+        <div className="inputField">
+            <label htmlFor="input">Prénom :</label>
+            <input type="text" id="input" value={this.state.firstName} onChange={this.handleChangeFirstName} required/>
+            <label htmlFor="input">Name :</label>
+            <input type="text" id="input" value={this.state.name} onChange={this.handleChangeName} required/>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
     )
   }
 }

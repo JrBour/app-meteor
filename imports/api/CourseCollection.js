@@ -21,10 +21,10 @@ if( Meteor.isServer )
         createdAt: new Date(),
       });
     },
-    'courses.remove'(studentId) {
-       check(studentId, String);
+    'courses.remove'(courseId) {
+       check(courseId, String);
    
-       CourseCollection.remove(studentId);
+       CourseCollection.remove(courseId);
      },
     'courses.update'(courseId, name) {
       check(courseId, String);

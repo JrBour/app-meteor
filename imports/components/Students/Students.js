@@ -8,7 +8,6 @@ export default class Student extends Component {
     Meteor.call('students.remove', this.props.eleve);
   }
   render() {
-    var cc = this.props.eleve;
     return (
         <li className="taskClassName">
           <button className="delete" onClick={this.deleteThisStudent.bind(this)}>

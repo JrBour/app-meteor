@@ -20,15 +20,13 @@ class CoursesAdd extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    var cc = CourseCollection.insert({
+    CourseCollection.insert({
       name: this.state.name,
       createdAt: new Date(),
     });
-    console.log(cc);
     this.setState({
       name: ''
     })
-    console.log('Test');
   };
 
   render() {
