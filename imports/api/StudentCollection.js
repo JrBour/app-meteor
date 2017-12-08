@@ -6,7 +6,7 @@ export const StudentCollection = new Mongo.Collection('students');
 
 StudentCollection.allow({
   insert() { return true; },
-  // update() { return true; },
+  update() { return true; },
   remove() { return true; },
 });
 if( Meteor.isServer )
@@ -27,12 +27,13 @@ if( Meteor.isServer )
    
        StudentCollection.remove(studentId);
      },
-    // 'tasks.setChecked'(taskId, setChecked) {
-    //   check(taskId, String);
-    //   check(setChecked, Boolean);
+    'students.update'(studentId, firstName, name ) {
+      check(studentId, String);
+      check(name, String);
+      check(firstName, String);
    
-    //   StudentCollection.update(taskId, { $set: { checked: setChecked } });
-    // },
+      StudentCollection.update(studentId, { $set: { name: name, firstName: firstName } });
+    },
   });
 
   Meteor.publish(

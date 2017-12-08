@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { CourseCollection } from '../../api/CourseCollection.js';
 
 export default class Courses extends Component {
@@ -16,7 +17,7 @@ export default class Courses extends Component {
         <button className="delete" onClick={this.deleteThisCourse.bind(this)}>
           &times;
         </button>
-        <span>{this.props.courseName}</span>
+        <Link to={'/course/edit/' + this.props.course}><span>{this.props.courseName}</span></Link>
       </li>
     )
   }
