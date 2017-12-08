@@ -9,26 +9,17 @@ import {
 
 import createBrowserHistory from 'history/createBrowserHistory';
 
-// Shared Component
+// Component
 import Home from './components/Home';
-import StudentsList from './components/Students/StudentsList';
-import StudentsAdd from './components/Students/StudentsAdd';
+import Register from './components/Auth/Register';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      message: 'Hello World'
-    }
-  }
-
   render() {
     return (
       <Router history={createBrowserHistory()}>
         <div>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/students" component={StudentsList}/>
-          <Route exact path="/students/add" component={StudentsAdd}/>
+          <Route exact path="/register" component={Register}/>
         </div>
       </Router>
     );
