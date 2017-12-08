@@ -10,6 +10,7 @@ class Home extends Component {
       <div className="home">
         <h1>Hetic Classroom</h1>
         <Link to={'/students'}>Students</Link>
+        <Link to={'/courses'}>Courses</Link>
       </div>
     );
   }
