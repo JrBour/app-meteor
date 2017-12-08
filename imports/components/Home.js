@@ -41,13 +41,20 @@ class Home extends Component {
         <h1>Hetic Classroom</h1>
         <p>{this.props.user ? this.props.user.username : ''}</p>
         {this.renderLogout()}
-        <div className="linkBlock">
-          <Link to={'/students'}>Students</Link>
-        </div>
-        <div className="linkBlock">
-          <Link to={'/courses'}>Courses</Link>
-        </div>
         {this.renderLogin()}
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <Link to={'/students'}>Etudiants</Link>
+            </div>
+            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <Link to={'/courses'}>Courses</Link>
+            </div>
+            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <Link to={'/classes'}>Classes</Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
