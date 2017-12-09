@@ -12,7 +12,12 @@ export default class Classes extends Component {
         <button className="delete" onClick={this.deleteThisClasse.bind(this)}>
           &times;
         </button>
-        <Link to={'/classes/edit/' + this.props.classe}><span>{this.props.classeName} {this.props.classeGroup}</span></Link>
+        <Link to={'/classes/edit/' + this.props.classe}>
+        <button className="delete">
+          Edit
+        </button>
+        </Link>
+        <Link to={'/classes/list/' + this.props.classeName}><span>{this.props.classeName}</span></Link>
       </li>
     )
   }

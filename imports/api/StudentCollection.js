@@ -12,13 +12,15 @@ StudentCollection.allow({
 if( Meteor.isServer )
 {
   Meteor.methods({
-    'students.insert'(firstName, name) {
+    'students.insert'(firstName, name, classe) {
       check(firstName, String);
       check(name, String);
+      check(classe, String);
       
       StudentCollection.insert({
         firstName,
         name,
+        classe,
         createdAt: new Date(),
       });
     },
@@ -27,12 +29,13 @@ if( Meteor.isServer )
    
        StudentCollection.remove(studentId);
      },
-    'students.update'(studentId, firstName, name ) {
+    'students.update'(studentId, firstName, name, classe ) {
       check(studentId, String);
       check(name, String);
       check(firstName, String);
+      check(classe, String);
    
-      StudentCollection.update(studentId, { $set: { name: name, firstName: firstName } });
+      StudentCollection.update(studentId, { $set: { name: name, firstName: firstName, classe: classe } });
     },
   });
 

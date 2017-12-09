@@ -21,6 +21,7 @@ import CoursesEdit from './components/Courses/CoursesEdit';
 import ClassesList from './components/Classes/ClassesList';
 import ClassesAdd from './components/Classes/ClassesAdd';
 import ClassesEdit from './components/Classes/ClassesEdit';
+import ClassesStudents from './components/Classes/ClassesStudents';
 import Register from './components/Auth/Register';
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/classes" component={ClassesList}/>
             <Route exact path="/classes/add" component={ClassesAdd}/>
             <Route path="/classes/edit/:id" component={ClassesEdit}/>
+            <Route path="/classes/list/:name" component={ClassesStudents}/>
             <Route exact path="/register" component={Register}/>
             </div>
         </Router>      

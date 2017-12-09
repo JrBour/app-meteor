@@ -16,7 +16,7 @@ class StudentsList extends Component {
   }
   renderStudent(){
     return this.props.students.map((student) => (
-      <Student key={student._id} eleve={student._id} eleveName={student.name} eleveFirstName={student.firstName} />
+      <Student key={student._id} eleve={student._id} eleveName={student.name} eleveFirstName={student.firstName} classe={student.classe} />
     ));
   }
 
