@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import Student from '../Students/Students';
+import StudentsProfil from '../StudentsProfil/StudentsProfil.js';
 import './StudentsShow.css'
 import { StudentCollection } from '../../../api/StudentCollection.js';
 import { ClasseCollection } from '../../../api/ClasseCollection.js';
@@ -16,20 +16,14 @@ class StudentsShow extends Component {
   }
   renderStudent(){
     return this.props.students.map((student) => (
-      <div>
-        <h1>{student.firstName} {student.name}</h1>
-        <button>
-          Editer
-        </button>
-      </div>
+      <StudentsProfil key={student._id} eleve={student._id} firstName={student.firstName} name={student.name} />
     ));
   }
   render() {
     return (
       <div className="studentsList">
-        <h1></h1>
+        <p>{this.props.classes.name}</p>
           {this.renderStudent()}
-        <Link to={'/'}>Accueil</Link>
         <Link to={'/students/add'}>Ajouter</Link>
       </div>
     );

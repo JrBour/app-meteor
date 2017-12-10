@@ -10,7 +10,8 @@ class Login extends Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      errorMessage: ''
     }
   }
 
@@ -32,7 +33,12 @@ class Login extends Component {
     const password = this.state.password;
 
     Meteor.loginWithPassword(userName, password, (error) => {
-      if(error) return console.log("there was an error: " + error);
+      if(error) {
+        this.setState({
+          errorMessage: 'Il y a une erreur'
+        });
+        return console.log("there was an error: " + error);
+      }
       return this.props.history.push('/')
     });
   };
@@ -52,6 +58,7 @@ class Login extends Component {
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
+        {this.state.errorMessage ? <p>{this.state.errorMessage}</p> : ''}
         <Link to="/register">Create an account</Link>
       </div>
     );

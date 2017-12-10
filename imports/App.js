@@ -17,6 +17,7 @@ import ClassesList from './components/Classes/ClassesList/ClassesList';
 import ClassesAdd from './components/Classes/ClassesAdd/ClassesAdd';
 import ClassesEdit from './components/Classes/ClassesEdit/ClassesEdit';
 import ClassesStudents from './components/Classes/ClassesStudents/ClassesStudents';
+import UsersList from './components/Users/UsersList/UsersList';
 import Register from './components/Auth/Register/Register';
 import NavBar from  './shared/Navbar/NavBar'
 
@@ -42,6 +43,8 @@ class App extends Component {
             <Route exact path="/classes/add" component={ClassesAdd} />
             <Route path="/classes/edit/:id" component={ClassesEdit} />
             <Route path="/classes/list/:name" component={ClassesStudents}/>
+
+            <Route path="/users/" component={UsersList}/>
 
             <Route exact path="/register" component={Register} />
           </div>
