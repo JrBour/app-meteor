@@ -17,7 +17,7 @@ export default class Classes extends Component {
           Edit
         </button>
         </Link>
-        <Link to={'/classes/list/' + this.props.classeName}><span>{this.props.classeName}</span></Link>
+        <Link to={'/classes/list/' + this.props.classe}><span>{this.props.classeName}</span></Link>
       </li>
     )
   }

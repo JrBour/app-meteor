@@ -29,7 +29,7 @@ if( Meteor.isServer )
    
        StudentCollection.remove(studentId);
      },
-    'students.update'(studentId, firstName, name, classe ) {
+    'students.update'(studentId, firstName, name, classe) {
       check(studentId, String);
       check(name, String);
       check(firstName, String);

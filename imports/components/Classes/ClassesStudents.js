@@ -14,7 +14,7 @@ class ClassesEdit extends Component {
   }
   renderClasse(){ 
     return this.props.students.map((student) => (
-      <li key={student._id}>{student.firstName}{student.name}</li>
+      <li key={student._id}>{student.firstName} {student.name}</li>
     ));
   }
   render() {

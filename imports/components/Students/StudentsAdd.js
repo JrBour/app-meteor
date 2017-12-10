@@ -14,7 +14,7 @@ class StudentsAdd extends Component {
     this.state = {
       firstName: '',
       name: '',
-      classe: 'Web 1'
+      classe: 'ubYXjvPxBTsEd7yw4'
     }
   }
   handleChangeName = (event) => {
@@ -28,12 +28,12 @@ class StudentsAdd extends Component {
     })
   };
   handleChangeClasse = (event) => {
-    console.log(event.target.classe);
     this.setState({
-      classe: event.target.value,
+      classe: event.target.selectedOptions[0].getAttribute('classe')
     })
   };
   renderClasses(){    
+
     return this.props.classes.map((classe) => (
       <option key={classe._id} classe={classe._id} value={classe.name}>{classe.name}</option>
     ));
