@@ -8,7 +8,8 @@ class NavBar extends Component {
   logout = () => {
     Meteor.logout((error) => {
       if (error) return console.log("there was an error: " + error);
-    })
+      return this.props.history.push('/')
+    });
   };
 
   renderAccount = () => {
@@ -24,16 +25,7 @@ class NavBar extends Component {
         </ul>
       )
     }
-    return (
-      <ul className="nav navbar-nav navbar-right">
-        <li>
-          <Link to={'/login'}>Login</Link>
-        </li>
-        <li>
-          <Link to={'/register'}>Register</Link>
-        </li>
-      </ul>
-    )
+    return ''
   };
 
   renderPosts = () => {
@@ -48,6 +40,9 @@ class NavBar extends Component {
           </li>
           <li>
             <Link to={'/classes'}>Classes</Link>
+          </li>
+          <li>
+            <Link to={'/users'}>Users</Link>
           </li>
         </ul>
       )
