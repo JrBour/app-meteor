@@ -45,11 +45,8 @@ class Register extends Component {
       {
         username: this.state.username,
         password: this.state.password,
-        roles: 'STUDENTS'
       },
       (error) => {
-        let userId = Meteor.userId();
-        Roles.addUsersToRoles( userId, [ 'roleOne', 'roleTwo', 'roleThree' ] );
         if (error) return console.log("there was an error: " + error);
         return this.props.history.push('/')
       }
