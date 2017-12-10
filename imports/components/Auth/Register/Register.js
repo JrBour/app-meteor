@@ -4,6 +4,8 @@ import { withRouter } from 'react-router'
 import { Accounts } from 'meteor/accounts-base'
 import { Meteor } from 'meteor/meteor'
 import './Register.css'
+import { Link } from 'react-router-dom'
+
 
 class Register extends Component {
   constructor(props) {
@@ -48,6 +50,8 @@ class Register extends Component {
       },
       (error) => {
         if (error) return console.log("there was an error: " + error);
+        let userId = Meteor.userId();
+        Roles.addUsersToRoles( userId, 'Student');
         return this.props.history.push('/')
       }
     );
@@ -81,6 +85,7 @@ class Register extends Component {
                 <button type="submit" className="btn btn-primary">Submit</button>
               </form>
               {this.state.errorMessage ? <p>{this.state.errorMessage}</p> : ''}
+              <Link to="/">Retourner sur la home</Link>
             </div>
           </div>
         </div>
