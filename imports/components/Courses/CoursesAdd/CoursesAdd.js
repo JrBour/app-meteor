@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CourseCollection } from '../../../api/CourseCollection.js';
 import './CoursesAdd.css'
 

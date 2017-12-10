@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Meteor } from 'meteor/meteor';
+import { Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Link, Redirect } from 'react-router-dom'
-import { StudentCollection } from '../../../api/StudentCollection.js';
+import { Meteor } from 'meteor/meteor';
+import Student from '../Students/Students.js';
+import { ClasseCollection } from '../../../api/ClasseCollection.js';
 import './StudentsAdd.css'
 
 class StudentsAdd extends Component {
@@ -10,7 +11,8 @@ class StudentsAdd extends Component {
     super(props);
     this.state = {
       firstName: '',
-      name: ''
+      name: '',
+      classe: 'ubYXjvPxBTsEd7yw4'
     }
   }
   handleChangeName = (event) => {
@@ -23,16 +25,25 @@ class StudentsAdd extends Component {
       firstName: event.target.value,
     })
   };
+  handleChangeClasse = (event) => {
+    this.setState({
+      classe: event.target.selectedOptions[0].getAttribute('classe')
+    })
+  };
+  renderClasses(){
+
+    return this.props.classes.map((classe) => (
+      <option key={classe._id} classe={classe._id} value={classe.name}>{classe.name}</option>
+    ));
+  }
   handleSubmit = (e) => {
     e.preventDefault();
-    Meteor.call('students.insert', this.state.firstName, this.state.name);
+    Meteor.call('students.insert', this.state.firstName, this.state.name, this.state.classe);
     this.setState({
       firstName: '',
-      name: ''
+      name: '',
+      classe: ''
     });
-    return (
-      <Redirect to="/students"/>
-    )
   };
   render() {
     return (
@@ -44,6 +55,9 @@ class StudentsAdd extends Component {
             <input type="text" id="input" value={this.state.firstName} onChange={this.handleChangeFirstName} required/>
             <label htmlFor="input">Name :</label>
             <input type="text" id="input" value={this.state.name} onChange={this.handleChangeName} required/>
+            <select id="listStudent" onChange={this.handleChangeClasse}>
+              {this.renderClasses()}
+            </select>
           </div>
           <input type="submit" value="Submit" />
         </form>
@@ -54,7 +68,8 @@ class StudentsAdd extends Component {
 }
 
 export default withTracker(() => {
+  Meteor.subscribe( "classes.all" );
   return {
-    students: StudentCollection.find({}).fetch(),
+    classes: ClasseCollection.find({}).fetch(),
   };
 })(StudentsAdd);

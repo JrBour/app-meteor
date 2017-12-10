@@ -13,13 +13,10 @@ ClasseCollection.allow({
 if( Meteor.isServer )
 {
   Meteor.methods({
-    'classes.insert'(name, group) {
+    'classes.insert'(name) {
       check(name, String);
-      check(group, String);
-      
       ClasseCollection.insert({
         name,
-        group,
         createdAt: new Date(),
       });
     },
@@ -28,12 +25,11 @@ if( Meteor.isServer )
    
        ClasseCollection.remove(classeId);
      },
-    'classes.update'(classeId, name, groupe) {
+    'classes.update'(classeId, name) {
       check(classeId, String);
       check(name, String);
-      check(group, String);
    
-      ClasseCollection.update(classeId, { $set: { name: name, group: group } });
+      ClasseCollection.update(classeId, { $set: { name: name } });
     },
   });
 

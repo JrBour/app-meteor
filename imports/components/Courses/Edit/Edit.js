@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { CourseCollection } from '../../../api/CourseCollection.js';
 import './Edit.css'

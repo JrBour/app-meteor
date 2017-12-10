@@ -7,6 +7,7 @@ import {
 import createBrowserHistory from 'history/createBrowserHistory';
 import Home from './components/Home/Home';
 import StudentsList from './components/Students/StudentsList/StudentsList';
+import StudentsShow from './components/Students/StudentsShow/StudentsShow';
 import StudentsAdd from './components/Students/StudentsAdd/StudentsAdd';
 import StudentsEdit from './components/Students/StudentsEdit/StudentsEdit';
 import CoursesList from './components/Courses/CoursesList/CoursesList';
@@ -15,8 +16,8 @@ import CoursesEdit from './components/Courses/CoursesEdit/CoursesEdit';
 import ClassesList from './components/Classes/ClassesList/ClassesList';
 import ClassesAdd from './components/Classes/ClassesAdd/ClassesAdd';
 import ClassesEdit from './components/Classes/ClassesEdit/ClassesEdit';
+import ClassesStudents from './components/Classes/ClassesStudents/ClassesStudents';
 import Register from './components/Auth/Register/Register';
-import Login from './components/Auth/Login/Login';
 import NavBar from  './shared/Navbar/NavBar'
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
             <NavBar />
             <Route exact path="/" component={Home} />
             <Route exact path="/students" component={StudentsList} />
+            <Route path="/students/show/:id" component={StudentsShow}/>
             <Route exact path="/students/add" component={StudentsAdd} />
             <Route path="/students/edit/:id" component={StudentsEdit} />
 
@@ -38,6 +40,7 @@ class App extends Component {
             <Route exact path="/classes" component={ClassesList} />
             <Route exact path="/classes/add" component={ClassesAdd} />
             <Route path="/classes/edit/:id" component={ClassesEdit} />
+            <Route path="/classes/list/:name" component={ClassesStudents}/>
 
             <Route exact path="/register" component={Register} />
           </div>

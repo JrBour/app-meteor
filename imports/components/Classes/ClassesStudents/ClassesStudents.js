@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import { ClasseCollection } from '../../../api/ClasseCollection.js';
+import { StudentCollection } from '../../../api/StudentCollection.js';
 import Edit from '../Edit/Edit.js';
-import './ClassesEdit.css'
+import './ClassesStudents.css'
 
 class ClassesEdit extends Component {
   constructor(props) {
@@ -14,8 +14,8 @@ class ClassesEdit extends Component {
     }
   }
   renderClasse(){ 
-    return this.props.classes.map((classe) => (
-      <Edit key={classe._id} classe={classe._id} name={classe.name} />
+    return this.props.students.map((student) => (
+      <li key={student._id}>{student.firstName} {student.name}</li>
     ));
   }
   render() {
@@ -34,10 +34,10 @@ class ClassesEdit extends Component {
 export default withTracker(() => {
   var url = window.location.pathname;
   var arr = url.split('/');
-  var id = arr[arr.length - 1];
+  var classe = arr[arr.length - 1];
   
-  Meteor.subscribe( "classes.all" );
+  Meteor.subscribe( "students.all" );
   return {
-    classes: ClasseCollection.find({_id : id}).fetch(),
+    students: StudentCollection.find({classe : classe}).fetch(),
   };
 })(ClassesEdit);
