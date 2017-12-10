@@ -37,20 +37,20 @@ class CoursesAdd extends Component {
 
   render() {
     return (
-      <div className="studentsAdd">
-        <h1>Ajout d'un cours</h1>
+      <div className="coursesAdd">
+        <h1>Add a course</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="inputField">
             <label htmlFor="input">Name :</label>
             <input type="text" id="input" value={this.state.name} onChange={this.handleChange} required />
           </div>
           <textarea name="description" id="description" cols="30" rows="10" value={this.state.description}
-                    onChange={this.handleChangeDescription} placeholder="Mettez la description du cours">
+                    onChange={this.handleChangeDescription} placeholder="Add description">
 
           </textarea><br/>
           <input type="submit" value="Submit" />
         </form>
-        <Link to={'/courses'}>Cours</Link>
+        <Link to={'/courses'}>Courses</Link>
       </div>
     );
   }

@@ -30,7 +30,7 @@ class ClassesAdd extends Component {
 
   render() {
     return (
-      <div className="studentsAdd">
+      <div className="classesAdd">
         <h1>Ajout d'une classe</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="inputField">

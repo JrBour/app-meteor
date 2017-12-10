@@ -1,0 +1,13 @@
+.studentsEdit {
+    padding: 0px 45px;
+}
+
+.studentsEdit ul {
+    margin: 0;
+}
+
+.studentsEdit #input {
+    margin: 5px 15px;
+    padding: 15px;
+    border-radius: 0px;
+}

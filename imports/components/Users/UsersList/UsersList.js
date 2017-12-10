@@ -26,11 +26,11 @@ class UsersList extends Component {
   render() {
     return (
       <div className="studentsList">
-        <h1>Listes des élèves</h1>
+        <h1>Students List</h1>
         <ul>
           {this.renderUsers()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
+        <Link to={'/'}>Home</Link>
       </div>
     );
 

@@ -20,12 +20,12 @@ class ClassesEdit extends Component {
   }
   render() {
     return (
-      <div className="studentsList">
+      <div className="classesEdit">
         <h1>Edit classe</h1>
         <ul>
           {this.renderClasse()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
+        <Link to={'/'}>Home</Link> <br/>
         <Link to={'/Classes'}>Classes</Link>
       </div>
     );

@@ -30,13 +30,13 @@ export default class Edit extends Component {
     return (
       <form onSubmit={this.handleSumbit.bind(this) }>
       <div className="inputField">
-          <label htmlFor="input">Nom</label>
+          <label htmlFor="input">Name :</label>
           <input type="text" id="input" value={this.state.name} onChange={this.handleChangeName} required/>
       </div>
         <textarea name="description" id="description" cols="30" rows="10" value={this.state.description}
-                  onChange={this.handleChangeDescription} placeholder="Mettez la description du cours">
+                  onChange={this.handleChangeDescription} placeholder="Add description">
 
-          </textarea><br/>
+          </textarea><br/><br/>
       <input type="submit" value="Submit" />
     </form>
     )

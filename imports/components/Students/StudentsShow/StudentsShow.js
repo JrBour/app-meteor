@@ -24,7 +24,9 @@ class StudentsShow extends Component {
       <div className="studentsList">
         <p>{this.props.classes.name}</p>
           {this.renderStudent()}
-        <Link to={'/students/add'}>Ajouter</Link>
+
+        <Link to={'/'}>Home</Link>
+        <Link to={'/students/add'}>Add</Link>
       </div>
     );
   }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import Classes from '../Classes/Classes.js';
+import './ClassesList.css'
 
 // Collections
 import { ClasseCollection } from '../../../api/ClasseCollection.js';
@@ -15,13 +16,13 @@ class ClassesList extends Component {
   }
   render() {
     return (
-      <div className="studentsList">
-        <h1>Listes des classes</h1>
+      <div className="classesList">
+        <h1>Classes List</h1>
         <ul>
           {this.renderClasses()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
-        <Link to={'/classes/add'}>Ajouter</Link>
+        <Link to={'/'}>Home</Link> <br/>
+        <Link to={'/classes/add'}>Add</Link>
       </div>
     );
   }
