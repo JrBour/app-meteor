@@ -8,16 +8,23 @@ export default class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: this.props.name
+      name: this.props.name,
+      description: this.props.description
     }
   }
   handleSumbit(event){
     event.preventDefault();
-    Meteor.call('courses.update', this.props.students, this.state.name);
+    Meteor.call('courses.update', this.props.students, this.state.name, this.state.description);
   }
   handleChangeName = (event) => {
     this.setState({
       name: event.target.value
+    })
+  };
+
+  handleChangeDescription = (event) => {
+    this.setState({
+      description: event.target.value
     })
   };
   render() {
@@ -27,6 +34,10 @@ export default class Edit extends Component {
           <label htmlFor="input">Nom</label>
           <input type="text" id="input" value={this.state.name} onChange={this.handleChangeName} required/>
       </div>
+        <textarea name="description" id="description" cols="30" rows="10" value={this.state.description}
+                  onChange={this.handleChangeDescription} placeholder="Mettez la description du cours">
+
+          </textarea><br/>
       <input type="submit" value="Submit" />
     </form>
     )

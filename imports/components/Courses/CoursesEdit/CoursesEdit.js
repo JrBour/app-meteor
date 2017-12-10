@@ -11,12 +11,13 @@ class CoursesEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      description: ''
     }
   }
   renderCourse(){ 
     return this.props.courses.map((course) => (
-      <Edit key={course._id} students={course._id} name={course.name} />
+      <Edit key={course._id} students={course._id} name={course.name} description={course.description} />
     ));
   }
   render() {
