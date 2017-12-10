@@ -14,10 +14,12 @@ class UsersList extends Component {
 
   renderUsers() {
     return this.props.users.map((user) => {
-      console.log('user : ', user);
-      return (
-        <li key={user._id}>{user.username}</li>
-      )
+      console.log('user : ', user.roles);
+      if (user.roles.includes('Student')) {
+        return (
+          <li key={user._id}>{user.username}</li>
+        )
+      }
     });
   }
 
@@ -31,12 +33,14 @@ class UsersList extends Component {
         <Link to={'/'}>Accueil</Link>
       </div>
     );
+
   }
 }
 
 export default withTracker(() => {
   Meteor.subscribe("userList");
   return {
-    users: Meteor.users.find().fetch()
+    users: Meteor.users.find().fetch(),
+    currentUser: Meteor.user()
   };
 })(UsersList);
