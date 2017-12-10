@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import Student from './Students.js';
-
-// Collections
-import { StudentCollection } from '../../api/StudentCollection.js';
-import { link } from 'fs';
+import Student from '../Students/Students.js';
+import { StudentCollection } from '../../../api/StudentCollection.js';
+import './StudentsList.css'
 
 class StudentsList extends Component {
   constructor(props) {
