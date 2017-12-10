@@ -25,3 +25,5 @@ mdg:validated-method
 accounts-ui
 accounts-password
 fourseven:scss
+twbs:bootstrap
+alanning:roles
