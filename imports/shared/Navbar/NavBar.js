@@ -27,7 +27,7 @@ class NavBar extends Component {
     return (
       <ul className="nav navbar-nav navbar-right">
         <li>
-          <Link to={'/login'}>Login</Link>
+          <Link to={'/'}>Login</Link>
         </li>
         <li>
           <Link to={'/register'}>Register</Link>
