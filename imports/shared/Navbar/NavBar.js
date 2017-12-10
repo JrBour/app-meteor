@@ -25,7 +25,16 @@ class NavBar extends Component {
         </ul>
       )
     }
-    return ''
+    return (
+      <ul className="nav navbar-nav navbar-right">
+        <li>
+          <Link to={'/'}>Login</Link>
+        </li>
+        <li>
+          <Link to={'/register'}>Register</Link>
+        </li>
+      </ul>
+    )
   };
 
   renderPosts = () => {
