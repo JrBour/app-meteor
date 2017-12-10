@@ -29,8 +29,8 @@ class StudentsShow extends Component {
       <div className="studentsList">
         <h1></h1>
           {this.renderStudent()}
-        <Link to={'/'}>Accueil</Link>
-        <Link to={'/students/add'}>Ajouter</Link>
+        <Link to={'/'}>Home</Link>
+        <Link to={'/students/add'}>Add</Link>
       </div>
     );
   }

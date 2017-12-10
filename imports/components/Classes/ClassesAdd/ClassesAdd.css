@@ -1,0 +1,14 @@
+.classesAdd {
+    padding: 0px 45px;
+}
+
+.classesAdd ul {
+    margin: 0;
+}
+
+.classesAdd #input {
+    margin: 5px 0px 5px 15px;
+    padding: 15px;
+    border-radius: 0px;
+}
+

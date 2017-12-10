@@ -22,13 +22,13 @@ class CoursesEdit extends Component {
   }
   render() {
     return (
-      <div className="studentsList">
-        <h1>Cours</h1>
+      <div className="coursesEdit">
+        <h1>Course</h1>
         <ul>
           {this.renderCourse()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
-        <Link to={'/courses'}>Cours</Link>
+        <Link to={'/'}>Home</Link> <br/>
+        <Link to={'/courses'}>Courses List</Link>
       </div>
     );
   }

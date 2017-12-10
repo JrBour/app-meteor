@@ -23,13 +23,13 @@ class StudentsEdit extends Component {
 
   render() {
     return (
-      <div className="studentsList">
-        <h1>Profil de l'élève</h1>
+      <div className="studentsEdit">
+        <h1>Student profil</h1>
         <ul>
           {this.renderStudent()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
-        <Link to={'/students'}>Elèves</Link>
+        <Link to={'/'}>Home</Link> <br/>
+        <Link to={'/students'}>Students</Link>
       </div>
     );
   }

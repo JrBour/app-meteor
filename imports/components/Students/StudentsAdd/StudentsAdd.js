@@ -48,12 +48,12 @@ class StudentsAdd extends Component {
   render() {
     return (
       <div className="studentsAdd">
-        <h1>Ajouter un élève</h1>
+        <h1>Add students</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="inputField">
-            <label htmlFor="input">Prénom :</label>
-            <input type="text" id="input" value={this.state.firstName} onChange={this.handleChangeFirstName} required/>
             <label htmlFor="input">Name :</label>
+            <input type="text" id="input" value={this.state.firstName} onChange={this.handleChangeFirstName} required/>
+            <label htmlFor="input">LastName :</label>
             <input type="text" id="input" value={this.state.name} onChange={this.handleChangeName} required/>
             <select id="listStudent" onChange={this.handleChangeClasse}>
               {this.renderClasses()}

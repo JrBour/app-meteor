@@ -14,13 +14,13 @@ class CoursesList extends Component {
   }
   render() {
     return (
-      <div className="studentsList">
-        <h1>Listes des cours</h1>
+      <div className="coursesList">
+        <h1>Courses List</h1>
         <ul>
           {this.renderCourses()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
-        <Link to={'/courses/add'}>Ajouter</Link>
+        <Link to={'/'}>Home</Link> <br/>
+        <Link to={'/courses/add'}>Add courses</Link>
       </div>
     );
   }

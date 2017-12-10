@@ -1,0 +1,18 @@
+.coursesAdd {
+    padding: 0px 45px;
+}
+
+.coursesAdd ul {
+    margin: 0;
+}
+
+.coursesAdd #input {
+    margin: 5px 0px 5px 15px;
+    padding: 15px;
+    border-radius: 0px;
+}
+
+.coursesEdit textarea {
+    width: 50%;
+}
+

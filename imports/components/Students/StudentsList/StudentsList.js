@@ -22,12 +22,12 @@ class StudentsList extends Component {
   render() {
     return (
       <div className="studentsList">
-        <h1>Listes des élèves</h1>
+        <h1>Students Lists</h1>
         <ul>
           {this.renderStudent()}
         </ul>
-        <Link to={'/'}>Accueil</Link>
-        <Link to={'/students/add'}>Ajouter</Link>
+        <Link to={'/'}>Home</Link> <br/>
+        <Link to={'/students/add'}>Add</Link>
       </div>
     );
   }

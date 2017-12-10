@@ -1,0 +1,14 @@
+.studentsAdd {
+    padding: 0px 45px;
+}
+
+.studentsAdd ul {
+    margin: 0;
+}
+
+.studentsAdd #input {
+    margin: 5px 15px;
+    padding: 15px;
+    border-radius: 0px;
+}
+
