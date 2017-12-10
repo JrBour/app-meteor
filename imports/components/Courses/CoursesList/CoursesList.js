@@ -9,7 +9,7 @@ import './CoursesList.css'
 class CoursesList extends Component {
   renderCourses(){
     return this.props.courses.map((course) => (
-      <Courses key={course._id} course={course._id} courseName={course.name} />
+      <Courses key={course._id} course={course._id} courseName={course.name} courseDescription={course.description}/>
     ));
   }
   render() {

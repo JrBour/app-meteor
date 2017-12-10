@@ -8,7 +8,8 @@ class CoursesAdd extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      description: ''
     }
   }
   handleChange = (event) => {
@@ -16,14 +17,21 @@ class CoursesAdd extends Component {
       name: event.target.value
     })
   };
+  handleChangeDescription = (event) => {
+    this.setState({
+      description: event.target.value
+    })
+  };
   handleSubmit = (e) => {
     e.preventDefault();
     CourseCollection.insert({
       name: this.state.name,
+      description: this.state.description,
       createdAt: new Date(),
     });
     this.setState({
-      name: ''
+      name: '',
+      description: ''
     })
   };
 
@@ -36,6 +44,10 @@ class CoursesAdd extends Component {
             <label htmlFor="input">Name :</label>
             <input type="text" id="input" value={this.state.name} onChange={this.handleChange} required />
           </div>
+          <textarea name="description" id="description" cols="30" rows="10" value={this.state.description}
+                    onChange={this.handleChangeDescription} placeholder="Mettez la description du cours">
+
+          </textarea><br/>
           <input type="submit" value="Submit" />
         </form>
         <Link to={'/courses'}>Cours</Link>
